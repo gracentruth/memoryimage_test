@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
 class MemoryImageApp extends StatefulWidget {
   @override
   _MemoryImageExampleState createState() {
+
     return _MemoryImageExampleState();
   }
 }
@@ -36,12 +37,17 @@ class _MemoryImageExampleState extends State {
     Uint8List data = (await rootBundle.load('assets/eunjin.png'))
         .buffer
         .asUint8List();
+
+    print('data : $data');
+
     setState(() => this.imageData = data);
   }
 
   @override
   Widget build(BuildContext context) {
-    print(MemoryImage(imageData, scale: 0.5));
+
+   print(MemoryImage(imageData, scale: 0.5));
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Woolha.com - Flutter Tutorial'),
